@@ -10,7 +10,7 @@ then
 for i in `cat api.config`
 do
 aname=`echo $i|awk -F":" '{print $1}'`
-version=`echo $i|awk -F":" '{print $2}`
+version=`echo $i|awk -F":" '{print $2}'`
 echo ${aname} ${version}
 ./apictl export-api -n ${aname} -v ${version} -e production -k
 done
@@ -22,7 +22,7 @@ then
 for i in `cat api.config`
 do
 aname=`echo $i|awk -F":" '{print $1}'`
-version=`echo $i|awk -F":" '{print $2}`
+version=`echo $i|awk -F":" '{print $2}'`
 echo ${aname} ${version}
 ./apictl import-api -f ./src/${aname}/${version}/${aname}_${version}.zip -e production -k
 done
