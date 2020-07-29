@@ -9,6 +9,7 @@ if [ "X$3" == "Xexport" ]
 then
 for i in `cat api.config`
 do
+echo $i
 aname=`echo $i|awk -F":" '{print $1}'`
 version=`echo $i|awk -F":" '{print $2}'`
 echo ${aname} ${version}
@@ -27,4 +28,3 @@ echo ${aname} ${version}
 ./apictl import-api -f ./src/${aname}/${version}/${aname}_${version}.zip -e production -k
 done
 fi
-
