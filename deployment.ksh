@@ -2,7 +2,7 @@
 user=`echo $1`
 paswd=`echo $2`
 echo $user $paswd
-/home/azureuser/project/tool/apictl/apictl login production -u ${user} -p ${paswd} -k
+./apictl login production -u ${user} -p ${paswd} -k
 IFS='
 '
 if [ "X$3" == "Xexport" ]
@@ -13,7 +13,7 @@ echo $i
 aname=`echo $i|awk -F":" '{print $1}'`
 version=`echo $i|awk -F":" '{print $2}'`
 echo ${aname} ${version}
-/home/azureuser/project/tool/apictl/apictl export-api -n ${aname} -v ${version} -e production -k
+./apictl export-api -n ${aname} -v ${version} -e production -k
 done
 fi
 
@@ -25,6 +25,6 @@ do
 aname=`echo $i|awk -F":" '{print $1}'`
 version=`echo $i|awk -F":" '{print $2}'`
 echo ${aname} ${version}
-/home/azureuser/project/tool/apictl/apictl import-api -f ./src/${aname}/${version}/${aname}_${version}.zip -e production -k
+./apictl import-api -f ./src/${aname}/${version}/${aname}_${version}.zip -e production -k
 done
 fi
