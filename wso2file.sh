@@ -5,7 +5,7 @@ echo $user $paswd
 /var/lib/jenkins/workspace/wso2_freestyle/tool/apictl/apictl login production -u ${user} -p ${paswd} -k
 IFS='
 '
-if [ "$3" == "export" ]
+if [ "$3" = "export" ]
 then
 for i in `cat api.config`
 do
