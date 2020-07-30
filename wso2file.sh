@@ -25,6 +25,7 @@ do
 aname=`echo $i|awk -F":" '{print $1}'`
 version=`echo $i|awk -F":" '{print $2}'`
 echo ${aname} ${version}
-/var/lib/jenkins/workspace/wso2_freestyle/tool/apictl/apictl import-api -f ./src/${aname}/${version}/${aname}_${version}.zip -e production -k
+#/var/lib/jenkins/workspace/wso2_freestyle/tool/apictl/apictl import-api -f ./src/${aname}/${version}/${aname}_${version}.zip -e production -k
+/var/lib/jenkins/workspace/wso2_freestyle/tool/apictl/apictl import-api -f /var/lib/jenkins/.wso2apictl/exported/apis/production/${aname}_${version}.zip -e production -k
 done
 fi
