@@ -18,7 +18,7 @@ done
 fi
 
 
-if [ "X$3" == "Ximport" ]
+if [ "$3" = "import" ]
 then
 for i in `cat api.config`
 do
