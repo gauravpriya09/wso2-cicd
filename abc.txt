@@ -6,7 +6,6 @@ pipeline {
             steps {
                 echo 'Hello World'
                 echo 'Webhooks Conf'
-                echo "Telefonica"
             }
         }
     }
